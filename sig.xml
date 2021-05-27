@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<SINGLETAG_LIST>
+    <SIGNATURE signature_id="simpleRec">
+        <CRITERIA behaviour="accept" mark="singles_LE">
+            <ITEM name="detectorID" value="16" type="TRUE" />
+            <ITEM name="energy" value="0.75" type="MAX" />
+        </CRITERIA>
+        <CRITERIA behaviour="accept" mark="singles_ME">
+            <ITEM name="detectorID" value="16" type="TRUE" />
+            <ITEM name="energy" value="0.75" type="MIN" />
+            <ITEM name="energy" value="2" type="MAX" />
+        </CRITERIA>
+        <CRITERIA behaviour="accept" mark="singles_HE">
+            <ITEM name="detectorID" value="16" type="TRUE" />
+            <ITEM name="energy" value="2" type="MIN" />
+            <ITEM name="energy" value="10" type="MAX" />
+        </CRITERIA>
+        <CRITERIA behaviour="accept" mark="singles_XE">
+            <ITEM name="detectorID" value="16" type="TRUE" />
+            <ITEM name="energy" value="10" type="MIN" />
+            <ITEM name="energy" value="100" type="MAX" />
+        </CRITERIA>
+        <CRITERIA behaviour="accept" mark="muWP">
+            <ITEM name="detectorID" value="0x20" type="TRUE" />
+        </CRITERIA>
+        <CRITERIA behaviour="accept" mark="muTT">
+            <ITEM name="detectorID" value="0x40" type="TRUE" />
+        </CRITERIA>
+        <CRITERIA behaviour="jump" next="muonRec">
+            <ITEM name="detectorID" value="16" type="TRUE" />
+            <ITEM name="energy" value="100" type="MIN" />
+        </CRITERIA>
+    </SIGNATURE>
+
+    <SIGNATURE signature_id="muonRec">
+        <CRITERIA behaviour="accept" mark="muSglTrack">
+            <ITEM name="n_cluster" value="4" type="MAX" />
+        </CRITERIA>
+        <CRITERIA behaviour="accept" mark="muDblTrack">
+            <ITEM name="n_cluster" value="4" type="MIN" />
+        </CRITERIA>
+    </SIGNATURE>
+
+
+</SINGLETAG_LIST>

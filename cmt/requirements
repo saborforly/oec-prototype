@@ -1,0 +1,6 @@
+package EventFilter
+
+use EvtConfig v* EvtProcessor
+use EvtSteering v* EvtProcessor
+use EvtStore v* EvtUtilities
+use EvtResult v* EvtProcessor

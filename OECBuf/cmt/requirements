@@ -1,0 +1,18 @@
+package OECBuf
+
+use SniperKernel v*
+
+use EDMUtil v* DataModel
+use EvtNavigator v* DataModel
+use BaseEvent v* DataModel
+use BufferMemMgr v* CommonSvc
+
+use OECEvent v*
+#use FastRecAlg v*
+
+#include_dirs "${EventFilter}/EvtUtilities/EvtAlgorithms/include"
+library  OECBuf  *.cc
+
+apply_pattern install_python_modules
+apply_pattern install_more_includes more=OECBuf
+apply_pattern linker_library library=OECBuf

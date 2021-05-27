@@ -1,0 +1,21 @@
+package OECAlg
+
+use SniperKernel v*
+use ROOT v* Externals
+use EDMUtil v* DataModel
+use EvtNavigator v* DataModel
+use BaseEvent v* DataModel
+use BufferMemMgr v* CommonSvc
+use InputReviser v* Utilities
+use OECEvent v*
+use EvtResult v* EvtProcessor
+use EvtStore v* EvtUtilities
+
+#include_dirs "${EventFilter}/EvtProcessor/EvtResult/include"
+
+macro_append OECAlg_shlibflags " -lMathMore"
+
+library OECAlg *.cc
+
+apply_pattern install_python_modules
+apply_pattern linker_library library=OECAlg

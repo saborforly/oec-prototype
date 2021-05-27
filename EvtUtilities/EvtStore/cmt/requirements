@@ -1,0 +1,20 @@
+package EvtStore
+
+use SniperKernel v*
+use EvtDataTypes v* EvtUtilities
+use EvtStore v* EvtUtilities
+use ROOT v* Externals
+
+use EDMUtil v* DataModel
+use EvtNavigator v* DataModel
+use BaseEvent v* DataModel
+use BufferMemMgr v* CommonSvc
+
+use OECEvent v*
+
+include_dirs "${EventFilter}/EvtUtilities/EvtStore/include"
+library  EvtStore  *.cc
+
+apply_pattern install_python_modules
+apply_pattern install_more_includes more=EvtStore
+apply_pattern linker_library library=EvtStore

@@ -1,0 +1,26 @@
+package SimpleRecAlg
+
+use ROOT v* Externals
+use Boost v* Externals
+use SniperRelease v*
+use SniperKernel v*
+use RecEvent v* DataModel
+use CalibEvent v* DataModel
+use Identifier v* Detector
+use Geometry v* Detector
+use EvtNavigator v* DataModel
+use DataRegistritionSvc v* DataModel
+use BufferMemMgr v* CommonSvc
+use JunoTimer       v*  Utilities
+
+use EvtStore v* EvtUtilities
+use EvtDataTypes v* EvtUtilities
+use EvtAlgorithms v* EvtUtilities
+
+macro_append Boost_linkopts " -lboost_filesystem -lboost_system "
+
+library SimpleRecAlg *.cc
+apply_pattern linker_library library=SimpleRecAlg
+apply_pattern install_more_includes more=SimpleRecAlg
+apply_pattern install_python_modules
+

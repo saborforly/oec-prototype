@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ 
+<!ELEMENT SEQUENCE_LIST (SEQUENCE)+>
+<!ELEMENT SEQUENCE (ESALGORITHM)+>
+<!ELEMENT ESALGORITHM EMPTY>
+
+<!ATTLIST SEQUENCE 
+    sequence_id   CDATA      #REQUIRED
+    input         CDATA      #IMPLIED
+    output        CDATA      #IMPLIED >
+
+<!ATTLIST ESALGORITHM
+    algorithm     CDATA      #REQUIRED
+    input         CDATA      #IMPLIED
+    output        CDATA      #IMPLIED >

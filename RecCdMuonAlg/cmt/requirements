@@ -1,0 +1,29 @@
+package RecCdMuonAlg
+
+use SniperKernel v*
+use CLHEP v* Externals
+use ROOT v* Externals
+use RecEvent v* DataModel
+use CalibEvent v* DataModel
+use EvtNavigator v* DataModel
+use DataRegistritionSvc v* DataModel
+use BufferMemMgr v* CommonSvc
+use RootWriter v* SniperSvc
+use EvtStore v* EvtUtilities
+use EvtDataTypes v* EvtUtilities
+use EvtAlgorithms v* EvtUtilities
+
+use RecCdMuonAlg v* Reconstruction
+use JunoTimer v* Utilities
+
+use OECEvent v*
+use Geometry v* Detector
+use Identifier v* Detector
+
+macro_append RecCdMuonAlg_shlibflags " -lSpectrum"
+
+
+library RecCdMuonAlg *.cc
+apply_pattern linker_library library=RecCdMuonAlg
+apply_pattern install_more_includes more=RecCdMuonAlg
+apply_pattern install_python_modules

@@ -1,0 +1,22 @@
+package EvtAlgorithms
+
+use SniperKernel v*
+use EvtDataTypes v* EvtUtilities
+use EvtStore v* EvtUtilities
+use ROOT v* Externals
+
+use EDMUtil v* DataModel
+use EvtNavigator v* DataModel
+use BaseEvent v* DataModel
+use BufferMemMgr v* CommonSvc
+use InputReviser v* Utilities
+use OECEvent v*
+#use FastRecAlg v*
+
+#include_dirs "${EventFilter}/EvtUtilities/EvtAlgorithms/include"
+#include_dirs "/junofs/users/huangx/huangxinihep/EventFilter/EvtUtilities/EvtAlgorithms/include"
+library  EvtAlgorithms  *.cc
+
+apply_pattern install_python_modules
+apply_pattern install_more_includes more=EvtAlgorithms
+apply_pattern linker_library library=EvtAlgorithms

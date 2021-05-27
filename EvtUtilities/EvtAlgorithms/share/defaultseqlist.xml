@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+<!DOCTYPE SEQUENCE_LIST SYSTEM "defaultseqlist.dtd">
+
+<SEQUENCE_LIST>
+  <SEQUENCE sequence_id="HIT">
+    <ESALGORITHM algorithm="EFDetectorHits" />
+  </SEQUENCE>
+
+  <SEQUENCE sequence_id="EMC">
+    <ESALGORITHM algorithm="EFGlobalEnergy" />
+  </SEQUENCE>
+
+  <SEQUENCE sequence_id="CST">
+    <ESALGORITHM algorithm="EmcRec" />
+    <ESALGORITHM algorithm="EFProcessCluster" />
+  </SEQUENCE>
+
+  <SEQUENCE sequence_id="SEC">
+    <ESALGORITHM algorithm="EFSectorHits" />
+  </SEQUENCE>
+
+  <SEQUENCE sequence_id="MDC">
+    <ESALGORITHM algorithm="MdcFastTrkAlg" />
+    <ESALGORITHM algorithm="EFChargedTrack" />
+  </SEQUENCE>
+
+  <SEQUENCE sequence_id="TOF">
+    <ESALGORITHM algorithm="EFFlightTime" />
+  </SEQUENCE>
+
+</SEQUENCE_LIST>

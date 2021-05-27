@@ -1,0 +1,26 @@
+package EvtSteering
+
+use SniperKernel v*
+use EvtSteerData v* EvtProcessor
+use EvtDataTypes v* EvtUtilities
+use EvtConfig v* EvtProcessor
+use EvtResult v* EvtProcessor
+use EDMUtil v* DataModel
+use EvtNavigator v* DataModel
+use BaseEvent v* DataModel
+use BufferMemMgr v* CommonSvc
+use InputReviser v* Utilities
+use OECEvent v*
+use JunoTimer v* Utilities
+
+macro libxercesc "${JUNOTOP}/ExternalLibs/Xercesc/3.2.2"
+macro EvtSteering_cflags " -I$(libxercesc)/include "
+macro EvtSteering_pp_cppflags " -I$(libxercesc)/include "
+macro EvtSteering_use_linkopts " -L$(libxercesc)/lib -lxerces-c"
+
+include_dirs "${EventFilter}/EvtProcessor/EvtSteering/include"
+library  EvtSteering  *.cc
+
+apply_pattern install_python_modules
+apply_pattern install_more_includes more=EvtSteering
+apply_pattern linker_library library=EvtSteering

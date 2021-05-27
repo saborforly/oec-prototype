@@ -1,0 +1,10 @@
+package EvtResult
+
+use SniperKernel v*
+
+include_dirs "${EventFilter}/EvtProcessor/EvtResult/include"
+library  EvtResult  *.cc
+
+apply_pattern install_python_modules
+apply_pattern install_more_includes more=EvtResult
+apply_pattern linker_library library=EvtResult

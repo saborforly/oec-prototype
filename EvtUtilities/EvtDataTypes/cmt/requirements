@@ -1,0 +1,9 @@
+package EvtDataTypes
+
+use SniperKernel v*
+
+library  EvtDataTypes  *.cc
+
+apply_pattern install_python_modules
+apply_pattern install_more_includes more=EvtDataTypes
+apply_pattern linker_library library=EvtDataTypes

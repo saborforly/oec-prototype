@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+
+<!DOCTYPE SIGNATURE_LIST SYSTEM "defaultsiglist.dtd">
+
+<SIGNATURE_LIST>
+
+  <SIGNATURE signature_id="HIT" prescale="1" forced_accept="2">
+    <CRITERIA behaviour="reject">
+      <ITEM name="nmdc" value="1000" type="MIN" />
+    </CRITERIA>
+    <!--CRITERIA behaviour="jump" next="MDC">
+      <ITEM name="nmuc" value="8" type="MIN" />
+    </CRITERIA-->
+  </SIGNATURE>
+
+  <SIGNATURE signature_id="EMC" prescale="1" forced_accept="2">
+    <CRITERIA behaviour="jump" next="MDC">
+      <ITEM name="etot" value="0.6194" type="MAX" />
+    </CRITERIA>
+    <CRITERIA behaviour="accept" mark="Hadron">
+      <ITEM name="etot" value="2.4776" type="MAX" />
+    </CRITERIA>
+  </SIGNATURE>
+
+  <SIGNATURE signature_id="CST" prescale="1" forced_accept="2">
+    <CRITERIA behaviour="accept" mark="DiPhoton">
+      <ITEM name="acop" value="5" type="MAX" />
+    </CRITERIA>
+    <CRITERIA behaviour="jump" next="SEC">
+      <ITEM name="eend" value="2.4776" type="MIN" />
+      <ITEM name="acop" value="10" type="MIN" />
+      <ITEM name="acop" value="25" type="MAX" />
+    </CRITERIA>
+    <CRITERIA behaviour="accept" mark="DiElectron">
+      <ITEM name="acop" value="10" type="MIN" />
+      <ITEM name="acop" value="25" type="MAX" />
+    </CRITERIA>
+    <CRITERIA behaviour="accept" mark="Hadron">
+    </CRITERIA>
+  </SIGNATURE>
+
+  <SIGNATURE signature_id="SEC" prescale="1" forced_accept="2">
+    <CRITERIA behaviour="accept" mark="EndcapBB">
+      <ITEM name="nsec" value="35" type="MIN" />
+    </CRITERIA>
+    <CRITERIA behaviour="accept" mark="Hadron">
+    </CRITERIA>
+  </SIGNATURE>
+
+  <SIGNATURE signature_id="MDC" prescale="1" forced_accept="2">
+    <CRITERIA behaviour="jump" next="TOF">
+      <ITEM name="ntrk" value="0" type="TRUE" />
+      <!--ITEM name="dtof" value="-5" type="MIN" /-->
+      <ITEM name="nmuc" value="6" type="MAX" />
+      <ITEM name="ebal" value="0.5" type="MAX" />
+    </CRITERIA>
+    <CRITERIA behaviour="accept" mark="Cosmic">
+      <ITEM name="ntrk" value="0" type="TRUE" />
+    </CRITERIA>
+    <CRITERIA behaviour="accept" mark="Hadron">
+      <ITEM name="ntrk" value="2" type="FALSE" />
+    </CRITERIA>
+    <CRITERIA behaviour="accept" mark="Hadron">
+      <ITEM name="acol" value="10" type="MIN" />
+    </CRITERIA>
+  </SIGNATURE>
+
+  <SIGNATURE signature_id="TOF" prescale="1" forced_accept="2">
+    <CRITERIA behaviour="reject">
+      <ITEM name="ntrk" value="0" type="TRUE" />
+      <ITEM name="dtof" value="-5" type="MIN" />
+    </CRITERIA>
+    <CRITERIA behaviour="accept" mark="Hadron">
+      <ITEM name="nmuc" value="5" type="MAX" />
+    </CRITERIA>
+    <CRITERIA behaviour="accept" mark="DiMuon">
+      <ITEM name="dtof" value="-5" type="MIN" />
+      <ITEM name="ntof" value="1" type="MIN" />
+    </CRITERIA>
+    <CRITERIA behaviour="accept" mark="Cosmic">
+    </CRITERIA>
+  </SIGNATURE>
+
+</SIGNATURE_LIST>

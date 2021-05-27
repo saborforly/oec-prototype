@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SEQUENCE_LIST>
+  <SEQUENCE sequence_id="simpleRec">
+    <ESALGORITHM algorithm="SimpleRec" />
+  </SEQUENCE>
+ 
+  <SEQUENCE sequence_id="muonRec">
+    <ESALGORITHM algorithm="MuonRec" />
+  </SEQUENCE>
+
+</SEQUENCE_LIST>

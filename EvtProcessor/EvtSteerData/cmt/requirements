@@ -1,0 +1,11 @@
+package EvtSteerData
+
+use SniperKernel v*
+use EvtStore v* EvtUtilities
+use EvtDataTypes v* EvtUtilities
+include_dirs "${EventFilter}/EvtProcessor/EvtSteerData/include"
+library  EvtSteerData  *.cc
+
+apply_pattern install_python_modules
+apply_pattern install_more_includes more=EvtSteerData
+apply_pattern linker_library library=EvtSteerData

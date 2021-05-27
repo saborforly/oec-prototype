@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!ELEMENT SIGNATURE_LIST (SIGNATURE)+>
+<!ELEMENT SIGNATURE (CRITERIA)+>
+<!ELEMENT CRITERIA (ITEM)*>
+<!ELEMENT ITEM EMPTY>
+
+<!ATTLIST SIGNATURE 
+   signature_id    ID        #REQUIRED 
+   prescale        CDATA     #REQUIRED
+   forced_accept   CDATA     #REQUIRED >
+
+<!ATTLIST CRITERIA 
+   behaviour   (reject|jump|accept)                                 #REQUIRED
+   mark        (Unknown|Hadron|DiMuon|DiElectron|DiPhoton|EndcapBB|Cosmic) #IMPLIED
+   next        CDATA                                                #IMPLIED>
+
+<!ATTLIST ITEM
+  name    CDATA                #REQUIRED
+  value   CDATA                #REQUIRED
+  type    (MIN|MAX|TRUE|FALSE) #REQUIRED >
+

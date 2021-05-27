@@ -1,0 +1,18 @@
+package EvtConfig
+
+use SniperKernel v*
+use EvtSteerData v* EvtProcessor
+
+macro libxercesc "${JUNOTOP}/ExternalLibs/Xercesc/3.2.2"
+macro EvtConfig_cflags " -I$(libxercesc)/include "
+macro EvtConfig_pp_cppflags " -I$(libxercesc)/include "
+macro EvtConfig_use_linkopts " -L$(libxercesc)/lib -lxerces-c"
+
+
+include_dirs "${EventFilter}/EvtProcessor/EvtConfig/include"
+apply_pattern install_more_includes more=EvtConfig
+
+library EvtConfig *.cc
+apply_pattern linker_library library=EvtConfig
+apply_pattern install_python_modules
+
